@@ -1,19 +1,19 @@
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-import Header from "./entities/header";
-import Footer from "./entities/footer";
-import Sidebar from "./entities/sidebar";
+import { Layout } from "./layouts/layout";
+import { Wherehouse } from "./pages/wherehouse";
+import { Item } from "./pages/item";
+import { Home } from "./pages/home";
 
 function App() {
   return (
-    <div className="layout">
-      <Header />
-      <Sidebar />
-      <main className="main-content">
-        <h2>Welcome to Warehouse Manage</h2>
-        <p>여기에 메인 콘텐츠가 들어갑니다.</p>
-      </main>
-      <Footer />
-    </div>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/wherehouse" element={<Wherehouse />} />
+        <Route path="/item" element={<Item />} />
+      </Routes>
+    </Layout>
   );
 }
 
