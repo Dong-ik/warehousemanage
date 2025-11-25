@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./entities/header";
+import Footer from "./entities/footer";
+import Sidebar from "./entities/sidebar";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Header />
+      <Sidebar />
+      <main className="main-content">
+        <h2>Welcome to Warehouse Manage</h2>
+        <p>여기에 메인 콘텐츠가 들어갑니다.</p>
+      </main>
+      <Footer />
     </div>
   );
 }
