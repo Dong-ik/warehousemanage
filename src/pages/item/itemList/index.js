@@ -1,6 +1,6 @@
 import "./itemList.css";
 
-export const itemList = () => {
+export const ItemList = () => {
   return (
     <div>
       <h2>Item List Page</h2>

@@ -12,19 +12,20 @@ const Sidebar = () => {
       return [
         { label: "Item", href: "/item" },
         { label: "Item List", href: "/item/itemList" },
+        { label: "Breakdown", href: "/item/breakdown" },
         { label: "Item Admin", href: "/item/itemadmin" },
       ];
-    } else if (location.pathname.startsWith("/wherehouse")) {
+    } else if (location.pathname.startsWith("/warehouse")) {
       return [
-        { label: "Wherehouse", href: "/wherehouse" },
-        { label: "Wherehouse List", href: "/wherehouse/wherehouseList" },
-        { label: "Wherehouse Admin", href: "/wherehouse/wherehouseAdmin" },
+        { label: "Warehouse", href: "/warehouse" },
+        { label: "Warehouse List", href: "/warehouse/warehouseList" },
+        { label: "Warehouse Admin", href: "/warehouse/warehouseAdmin" },
       ];
     }
     return [
       { label: "Home", href: "/" },
       { label: "Item", href: "/item" },
-      { label: "Wherehouse", href: "/wherehouse" },
+      { label: "Warehouse", href: "/warehouse" },
     ];
   };
 

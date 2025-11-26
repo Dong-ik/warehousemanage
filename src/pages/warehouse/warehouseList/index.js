@@ -1,9 +1,9 @@
 import "./wherehouseList.css";
 
-export const wherehouseList = () => {
+export const WarehouseList = () => {
   return (
     <div>
-      <h2>Wherehouse List Page</h2>
+      <h2>Warehouse List Page</h2>
       <table>
         <thead>
           <tr>

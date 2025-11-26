@@ -7,7 +7,7 @@ const Header = () => (
     <div className="header-nav-wrapper">
       <nav>
         <a href="/">Home</a>
-        <a href="/wherehouse">창고관리</a>
+        <a href="/warehouse">창고관리</a>
         <a href="/item">재산관리</a>
       </nav>
     </div>

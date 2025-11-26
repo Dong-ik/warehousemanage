@@ -1,4 +1,4 @@
-export const itemAdmin = () => {
+export const ItemAdmin = () => {
   return (
     <div>
       <h2>Item Admin Page</h2>
