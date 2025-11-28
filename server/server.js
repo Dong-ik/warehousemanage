@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
@@ -7,18 +8,24 @@ const app = express();
 // 미들웨어
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ limit: '50mb', extended: true }));
+
+// 정적 파일 서빙 (이미지 폴더)
+app.use('/images', express.static(path.join(__dirname, '..', 'images')));
 
 // 라우트 임포트
 const warehouseRoutes = require('./routes/warehouse');
 const itemRoutes = require('./routes/item');
 const breakdownRoutes = require('./routes/breakdown');
 const breakdownDetailRoutes = require('./routes/breakdownDetail');
+const uploadRoutes = require('./routes/upload');
 
 // API 라우트 마운트
 app.use('/api/warehouse', warehouseRoutes);
 app.use('/api/item', itemRoutes);
 app.use('/api/breakdown', breakdownRoutes);
 app.use('/api/breakdown-detail', breakdownDetailRoutes);
+app.use('/api/upload', uploadRoutes);
 
 // 헬스 체크
 app.get('/api/health', (req, res) => {

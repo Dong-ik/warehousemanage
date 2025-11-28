@@ -37,3 +37,20 @@ tbody tr:nth-child(even) {
 tbody tr:nth-child(odd) {
   background-color: #ffffff;
 }
+
+/* 이미지 셀 스타일 */
+.image-cell {
+  text-align: center;
+}
+
+.image-cell img {
+  max-width: 80px;
+  max-height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.no-image {
+  color: #999;
+  font-size: 12px;
+}

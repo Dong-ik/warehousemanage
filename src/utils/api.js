@@ -100,3 +100,24 @@ export const breakdownDetailAPI = {
   update: (id, data) => putRequest(`/breakdown-detail/${id}`, data),
   delete: (id) => deleteRequest(`/breakdown-detail/${id}`),
 };
+
+// Upload API
+export const uploadAPI = {
+  uploadImage: async (file) => {
+    const formData = new FormData();
+    formData.append('image', file);
+    
+    try {
+      const response = await fetch(`${API_BASE_URL}/upload/image`, {
+        method: 'POST',
+        body: formData,
+      });
+      if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      console.error('이미지 업로드 오류:', error);
+      throw error;
+    }
+  },
+  deleteImage: (filename) => deleteRequest(`/upload/${filename}`),
+};
